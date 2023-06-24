@@ -5,15 +5,14 @@
  * @counter: line_number
  * Return: no return
 */
-void f_add(stack_t **head, unsigned int counter)
+void sf_add(stack_t **head, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *ht;
 	int len = 0, aux;
-
-	h = *head;
-	while (h)
+	ht = *head;
+	while (ht)
 	{
-		h = h->next;
+		ht = ht->next;
 		len++;
 	}
 	if (len < 2)
@@ -24,9 +23,9 @@ void f_add(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n + h->next->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	ht = *head;
+	aux = ht->n + ht->next->n;
+	ht->next->n = aux;
+	*head = ht->next;
+	free(ht);
 }
